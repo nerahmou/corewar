@@ -14,7 +14,7 @@
 .PHONY: all clean fclean re signature
 NAME = corewar
 
-CC = clang -g
+CC = gcc -g
 CFLAGS += -Wall -Wextra -Werror
 
 LFTDIR = libft
