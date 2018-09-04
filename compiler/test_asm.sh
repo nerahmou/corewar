@@ -45,7 +45,7 @@ do
 	echo $(./asm ../ressources/champs/$elem.s  && mv $elem.cor cor;)
 	printf "${yellow}"
 	echo "************<ASM_SRC>***********"
-	echo "$(./asm_src ../ressources/champs/$elem.s  && mv ../ressources/champs/$elem.cor cor/$elem\src.cor;)\n"
+	echo "$(../ressources/asm_src ../ressources/champs/$elem.s  && mv ../ressources/champs/$elem.cor cor/$elem\src.cor;)\n"
 	if [ -f "./cor/$elem.cor" ] && [ -f "./cor/${elem}src.cor" ]
 	then
 		printf "${red}"
