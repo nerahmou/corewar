@@ -24,7 +24,7 @@ then
 	shift
 	args=($@)
 	else
-	args=($(ls ./../vm_champs/champs/))
+	args=($(ls ./../ressources/champs/))
 fi
 
 if [ ! -d "$dir_name" ]
@@ -42,10 +42,10 @@ do
 	echo "\tTEST DE : {$elem}\n"
 	printf "${green}"
 	echo "**************<ASM>*************"
-	echo $(./asm ../vm_champs/champs/$elem.s  && mv $elem.cor cor;)
+	echo $(./asm ../ressources/champs/$elem.s  && mv $elem.cor cor;)
 	printf "${yellow}"
 	echo "************<ASM_SRC>***********"
-	echo "$(./asm_src ../vm_champs/champs/$elem.s  && mv ../vm_champs/champs/$elem.cor cor/$elem\src.cor;)\n"
+	echo "$(./asm_src ../ressources/champs/$elem.s  && mv ../ressources/champs/$elem.cor cor/$elem\src.cor;)\n"
 	if [ -f "./cor/$elem.cor" ] && [ -f "./cor/${elem}src.cor" ]
 	then
 		printf "${red}"
@@ -57,7 +57,7 @@ do
 	fi
 		printf "${white}\n"
 	echo "************<VALGRIND>**************"
-		echo "$(valgrind ./asm ../vm_champs/champs/$elem.s && rm $elem.cor;)"
+		echo "$(valgrind ./asm ../ressources/champs/$elem.s && rm $elem.cor;)"
 	printf "${normal}"
 	echo "------------------------------->\n\n"
 	sleep $secondes
