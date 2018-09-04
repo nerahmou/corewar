@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/08/13 12:19:28 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/04 13:55:15 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/04 17:10:58 by amatthys    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -61,6 +61,7 @@ clean:
 	@printf "$(TRED)[X]$(NORMAL) $(NAME): Deleting objects and temporary files... "
 	@rm -rf $(OBJDIR)
 	@printf "$(TGREEN)[V]$(NORMAL)\n"
+	@rm -rf corewar.dSYM
 	@make -C $(LFTDIR) clean
 
 fclean: clean
@@ -78,4 +79,4 @@ signature:
 	@echo "  ██║     ██║   ██║██╔══██╗██╔══╝  ██║███╗██║██╔══██║██╔══██╗"
 	@echo "  ╚██████╗╚██████╔╝██║  ██║███████╗╚███╔███╔╝██║  ██║██║  ██║"
 	@echo "   ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝"
-	@echo "                                By Amatthys Kevazoul Nerahmou Jmonneri"
+	@echo "                       By Amatthys Kevazoul Nerahmou Jmonneri"

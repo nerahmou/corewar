@@ -6,11 +6,10 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/09/04 14:13:40 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/04 14:15:45 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/04 17:11:43 by amatthys    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
-
 include ../utils/colors.mk
 .PHONY: all clean fclean re signature
 
@@ -73,6 +72,7 @@ clean:
 	@printf "$(TRED)[X]$(NORMAL) $(NAME): Deleting objects and temporary files... "
 	@-rm -rf $(OBJDIR)
 	@printf "$(TGREEN)[V]$(NORMAL)\n"
+	@-rm -rf asm.dSYM
 	@make -C $(LFTDIR) clean
 
 fclean: clean
@@ -98,4 +98,4 @@ signature:
 	@echo "  ██╔══██║╚════██║██║╚██╔╝██║     ██║████╔╝██║ ██║"
 	@echo "  ██║  ██║███████║██║ ╚═╝ ██║     ██║╚██████╔╝ ██║"
 	@echo "  ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝     ╚═╝ ╚═════╝  ╚═╝"
-	@echo "                                       Compiling the future !"
+	@echo "                            Compiling the future !"
