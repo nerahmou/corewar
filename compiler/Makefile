@@ -54,11 +54,11 @@ OBJ = $(addprefix $(OBJDIR), $(addsuffix .o, $(FILES)))
 
 all: $(NAME) | signature
 
-$(NAME): $(OBJDIR) $(OBJ) $(LFTDIR)libft.a | build_libft
+$(NAME): $(OBJDIR) $(OBJ) $(LFTDIR)libft.a
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L$(LFTDIR) -lft
 	@echo "asm relinked"
 
-build_libft:
+$(LFTDIR)libft.a:
 	@make -C $(LFTDIR)
 
 $(OBJDIR):

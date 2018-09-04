@@ -42,11 +42,11 @@ O_FILES = $(patsubst $(SRCDIR)%.c, $(OBJDIR)%.o, $(C_FILES))
 
 all: $(NAME) | signature
 
-$(NAME): $(OBJDIR) $(O_FILES) $(LFTDIR)libft.a | build_libft
+$(NAME): $(OBJDIR) $(O_FILES) $(LFTDIR)libft.a
 	@$(CC) $(CFLAGS) -o $(NAME) $(O_FILES) -L$(LFTDIR) -lft
 	@echo "corewar relinked"
 
-build_libft:
+$(LFTDIR)libft.a:
 	@make -C $(LFTDIR)
 
 $(OBJDIR):

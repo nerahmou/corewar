@@ -37,7 +37,7 @@ P2 = aurollan.cor
 
 all: $(NAME)
 
-$(NAME): build_asm build_corewar
+$(NAME): build_libft build_asm build_corewar
 	@echo "$(NAME) ready, enjoy!"
 
 build_corewar:
@@ -47,6 +47,9 @@ build_corewar:
 build_asm:
 	@make -C $(ASM_DIR)
 	@cp $(ASM_DIR)/asm .
+
+build_libft:
+	@make -C common/$(LFTDIR)
 
 clean:
 	@make -C $(ASM_DIR) clean
