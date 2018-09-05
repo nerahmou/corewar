@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/12 17:57:24 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/31 14:09:24 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/05 16:15:45 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ int		cor_live(t_session *session, t_prog *prog)
 	int			i;
 
 	i = prog->instr.args[0];
-	player = cor_get_player_by_id(session->players, abs(i));
+	player = cor_get_player_by_id(session->players, ft_abs(i));
 	if (player && i <= 0)
 	{
 		session->last_alive = player;
