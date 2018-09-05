@@ -6,10 +6,11 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/09/04 14:13:40 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/05 12:44:43 by jmonneri    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/05 13:24:36 by jmonneri    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
+
 include ../utils/colors.mk
 .PHONY: all clean fclean re signature
 
@@ -91,6 +92,7 @@ test_asm: all
 	@cmp -l cor/$(COR).cor cor/$(COR)\src.cor
 
 signature:
+	@echo "$(TRED)"
 	@echo "   █████╗ ███████╗███╗   ███╗     ██╗ ██████╗  ██╗TM"
 	@echo "  ██╔══██╗██╔════╝████╗ ████║    ███║██╔═████╗███║"
 	@echo "  ███████║███████╗██╔████╔██║    ╚██║██║██╔██║╚██║"
@@ -98,3 +100,4 @@ signature:
 	@echo "  ██║  ██║███████║██║ ╚═╝ ██║     ██║╚██████╔╝ ██║"
 	@echo "  ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝     ╚═╝ ╚═════╝  ╚═╝"
 	@echo "                            Compiling the future !"
+	@echo "$(NORMAL)"
