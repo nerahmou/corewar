@@ -6,7 +6,7 @@
 /*   By: nerahmou <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/04 19:51:31 by nerahmou     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/30 21:44:53 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/05 11:40:46 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -128,7 +128,7 @@ int					lexicale_analyse(t_word **lst, t_asm *prog)
 			}
 		}
 		if (!tmp->type)
-			return (asm_e(prog, "Lexicale error: \"%s\"", tmp->str));
+			return (asm_e(prog, "Lexical error: \"%s\"", tmp->str));
 		tmp = tmp->next;
 	}
 	return (1);

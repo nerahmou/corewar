@@ -6,7 +6,7 @@
 /*   By: kevazoul <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/17 19:44:03 by kevazoul     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/03 18:33:22 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/05 11:54:43 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 static int		cor_change_id(t_player **players, t_player *player)
 {
 	if (player->forced)
-		return (cor_e("2 players with the same id\n"));
+		return (cor_e("2 players with the same id"));
 	while (cor_get_player_by_id(players, player->id + 1))
 		player->id++;
 	player->id++;
