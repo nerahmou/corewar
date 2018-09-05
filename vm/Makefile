@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/08/13 12:19:28 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/04 17:10:58 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/05 12:42:21 by jmonneri    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -44,7 +44,6 @@ all: $(NAME) | signature
 
 $(NAME): $(OBJDIR) $(O_FILES) $(LFTDIR)libft.a
 	@$(CC) $(CFLAGS) -o $(NAME) $(O_FILES) -L$(LFTDIR) -lft
-	@echo "corewar relinked"
 
 $(LFTDIR)libft.a:
 	@make -C $(LFTDIR)

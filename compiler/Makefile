@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/09/04 14:13:40 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/04 17:11:43 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/05 12:42:10 by jmonneri    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -55,7 +55,6 @@ all: $(NAME) | signature
 
 $(NAME): $(OBJDIR) $(OBJ) $(LFTDIR)libft.a
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L$(LFTDIR) -lft
-	@echo "asm relinked"
 
 $(LFTDIR)libft.a:
 	@make -C $(LFTDIR)

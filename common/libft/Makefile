@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/08/14 11:09:21 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/04 14:24:58 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/05 12:41:53 by jmonneri    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -196,7 +196,6 @@ all: $(NAME)
 
 $(NAME): $(OBJDIR) $(O_FILES)
 	@$(LIB_BUILDER) $(LIB_BUILD_FLAGS) $(NAME) $(O_FILES)
-	@echo "Libft relinked"
 
 $(OBJDIR):
 	@mkdir $@
