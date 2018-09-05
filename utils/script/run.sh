@@ -1,7 +1,10 @@
 #!/bin/sh
 
-LOGPATH=./logs
-CORPATH=./cor
+LOGPATH=./utils/script/logs
+CORPATH=./utils/script/cor
+VMSRC=./utils/script/corewar_src
+VM=./corewar
+
 
 BLACK="\033[30m"
 RED="\033[31m"
@@ -15,10 +18,10 @@ NORMAL="\033[0m"
 
 function ft_dumped
 {
-	./corewar_src -d $CYCLES $CORPATH/$i $CORPATH/$j > $LOGPATH/zaz.txt
+	$VMSRC -d $CYCLES $CORPATH/$i $CORPATH/$j > $LOGPATH/zaz.txt
 	ZAZ=$(grep -Ea "^0x" $LOGPATH/zaz.txt)
 	ZAZ_WIN=$(grep -Ea "Contestant \d+, \".*\", has won \!" $LOGPATH/zaz.txt | cut -d ',' -f 1 | cut -d ' ' -f 2)
-	../corewar -d $CYCLES $CORPATH/$i $CORPATH/$j > $LOGPATH/us.txt
+	$VM -d $CYCLES $CORPATH/$i $CORPATH/$j > $LOGPATH/us.txt
 	US=$(grep -Ea "^0x" $LOGPATH/us.txt)
 	US_WIN=$(grep -Ea "Player \d+(.+) is trop ze best\!" $LOGPATH/us.txt | cut -d '(' -f 1 | cut -d ' ' -f 2)
 	if [ "$ZAZ" = "$US" ];then
@@ -32,10 +35,10 @@ function ft_dumped
 
 function ft_winners
 {
-	./corewar_src $CORPATH/$i $CORPATH/$j > $LOGPATH/zaz.txt
+	$VMSRC $CORPATH/$i $CORPATH/$j > $LOGPATH/zaz.txt
 	ZAZ=$(grep -Ea "Contestant \d+, \".*\", has won \!" $LOGPATH/zaz.txt | cut -d ',' -f 1 | cut -d ' ' -f 2)
 	printf "Zaz = $ZAZ, "
-	../corewar $CORPATH/$i $CORPATH/$j > $LOGPATH/us.txt
+	$VM $CORPATH/$i $CORPATH/$j > $LOGPATH/us.txt
 	US=$(grep -Ea "Player \d+(.+) is trop ze best\!" $LOGPATH/us.txt | cut -d '(' -f 1 | cut -d ' ' -f 2)
 	printf "US = $US "
 	if [ "$ZAZ" = "$US" ];then

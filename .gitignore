@@ -1,0 +1,14 @@
+*asm
+*.gch
+*corewar
+.hide.*
+*.dSYM
+*.[oa]
+*.so
+.DS_Store
+*.zip
+*.txt
+us
+zaz
+diff.jojo
+kevazoul.cor
