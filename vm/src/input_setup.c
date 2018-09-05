@@ -6,7 +6,7 @@
 /*   By: kevazoul <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/17 19:44:03 by kevazoul     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/05 12:52:10 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/05 13:33:41 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,11 +35,7 @@ static int		cor_get_file(char **buff, char *filename)
 		return (-1);
 	read_ret = cor_read(buff, fd, CHAMP_MAX_SIZE + sizeof(t_header) + 1);
 	if ((read_ret < 0) && !cor_e("Unable to read %s", filename))
-	{
 		ft_memdel((void **)buff);
-//		close(fd);
-//		return (-1);
-	}
 	close(fd);
 	return (read_ret);
 }
@@ -54,6 +50,8 @@ static int		cor_read_champion(t_player *player)
 		return (cor_e("File too short (%s)", player->filename));
 	ft_memcpy(&player->header, player->code, sizeof(t_header));
 	ft_memrev(&player->header.prog_size, 4);
+	if (size - sizeof(t_header) != player->header.prog_size)
+		return(cor_e("%s : invalid header", player->filename));
 	if (player->header.prog_size < (uint16_t)size - sizeof(t_header))
 		size = player->header.prog_size;
 	if (size > CHAMP_MAX_SIZE + (int)sizeof(t_header))
@@ -77,7 +75,6 @@ static int		cor_load_players(int8_t *mem, t_player **players,
 		if (!cor_add_new_prog(progs, i * dist, players[i]->id))
 			return (0);
 		(*progs)->did_live = 0;
-		//ft_printf(" players[i]->code + sizeof(t_header) : [%s] | prog_size : %d\n", players[i]->code , players[i]->header.prog_size);
 		ft_memcpy(mem + (i * dist),
 		players[i]->code + sizeof(t_header),
 		players[i]->header.prog_size);
