@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/08/14 11:09:21 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/05 12:41:53 by jmonneri    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/05 12:43:38 by jmonneri    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -196,6 +196,7 @@ all: $(NAME)
 
 $(NAME): $(OBJDIR) $(O_FILES)
 	@$(LIB_BUILDER) $(LIB_BUILD_FLAGS) $(NAME) $(O_FILES)
+	@make signature
 
 $(OBJDIR):
 	@mkdir $@

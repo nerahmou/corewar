@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/09/04 14:13:40 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/09/05 12:42:10 by jmonneri    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/05 12:44:43 by jmonneri    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -53,10 +53,10 @@ OBJ = $(addprefix $(OBJDIR), $(addsuffix .o, $(FILES)))
 
 all: $(NAME) | signature
 
-$(NAME): $(OBJDIR) $(OBJ) $(LFTDIR)libft.a
+$(NAME): $(OBJDIR) $(OBJ) | build_libft
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L$(LFTDIR) -lft
 
-$(LFTDIR)libft.a:
+build_libft:
 	@make -C $(LFTDIR)
 
 $(OBJDIR):
