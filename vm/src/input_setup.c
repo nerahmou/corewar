@@ -6,7 +6,7 @@
 /*   By: kevazoul <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/17 19:44:03 by kevazoul     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/05 13:33:41 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/05 13:45:59 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -51,7 +51,7 @@ static int		cor_read_champion(t_player *player)
 	ft_memcpy(&player->header, player->code, sizeof(t_header));
 	ft_memrev(&player->header.prog_size, 4);
 	if (size - sizeof(t_header) != player->header.prog_size)
-		return(cor_e("%s : invalid header", player->filename));
+		return (cor_e("%s : invalid header", player->filename));
 	if (player->header.prog_size < (uint16_t)size - sizeof(t_header))
 		size = player->header.prog_size;
 	if (size > CHAMP_MAX_SIZE + (int)sizeof(t_header))
