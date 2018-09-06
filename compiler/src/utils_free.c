@@ -6,7 +6,7 @@
 /*   By: kevazoul <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/17 19:44:03 by kevazoul     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/30 21:46:52 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/06 15:32:17 by nerahmou    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -44,7 +44,7 @@ void			asm_free_asm_array(t_asm ***asms)
 
 	i = -1;
 	if (asms)
-		while ((*asms)[++i])
+		while (asms[++i] && (*asms)[i])
 			asm_free_asm(&(*asms)[i]);
 	ft_memdel((void **)asms);
 }

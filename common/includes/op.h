@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/14 10:18:39 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/23 16:20:51 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/06 15:24:21 by nerahmou    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,7 @@
 # define IND_CODE				3
 
 # define MAX_ARGS_NUMBER		4
-# define MAX_PLAYERS			4
+# define MAX_PLAYERS			12
 # define MEM_SIZE				(4*1024)
 # define IDX_MOD				(MEM_SIZE / 8)
 # define CHAMP_MAX_SIZE			(MEM_SIZE / 6)
