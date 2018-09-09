@@ -36,7 +36,7 @@ static int		asm_init(t_session *session)
 
 	i = -1;
 	if (!(session->asms = ft_memalloc(
-		sizeof(t_asm **) * (session->files_count + 1))))
+		sizeof(void *) * (session->files_count + 1))))
 		return (ft_error(MALLOC_FAILED, 0));
 	while (++i < session->files_count)
 	{

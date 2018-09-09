@@ -76,6 +76,8 @@ int					check_syntaxe(t_asm *prog, t_word *instruction,
 			instruction = instruction->next->next;
 		nb_args--;
 	}
+	if (instruction->next)
+			return (asm_e(prog, "Wrong number of args"));
 	asm_append_mb(prog, pattern.op_code, 1);
 	if (pattern.octal)
 		asm_append_mb(prog, get_bytecode(prog->to_append, pattern.nb_args), 1);
