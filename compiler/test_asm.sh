@@ -10,8 +10,6 @@ normal="\e[1;0m"
 
 dir_name=cor
 
-make
-
 if [ $1 ]
 then
 	secondes=$1
